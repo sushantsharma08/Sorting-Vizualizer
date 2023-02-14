@@ -46,7 +46,7 @@ function SelectionSort(arr) {
                 }
             }
             updatedSpan();
-        }, 1000 * (i+2))
+        }, 5000 * (i))
 
     }
 }

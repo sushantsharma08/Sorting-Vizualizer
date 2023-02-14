@@ -73,10 +73,12 @@
             justify-content: center;
             align-items: center;
         }
-        .btns{
+
+        .btns {
             margin-bottom: 25px;
         }
-        .betweenHr{
+
+        .betweenHr {
             width: 20vw;
             background-color: #6d6868;
             margin: auto;
@@ -85,13 +87,31 @@
             border: 1px solid rgba(89, 0, 255, 0.473);
             border-radius: 50%;
         }
-
+        .info{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .steps{
+            font-size: large;
+            margin-top: 1rem;
+            padding: 2.5rem 1rem;
+            border: 2px solid #6d6868;
+        }
+        .steps span{
+        color: #221919;
+        }
+        a{
+            color:#1a2927;
+            text-decoration: inherit;
+        }
         @media screen and (max-width: 650px) {
             button {
                 margin-top: 20px;
             }
 
-            .getInput{
+            .getInput {
                 flex-direction: column;
                 align-items: center;
             }
@@ -108,13 +128,13 @@
         <hr>
 
         <div class="getInput">
-                <div class="inp">
-                    <input placeholder="2,6,4,9,3,7" id="arrInput" class="inputForArray" type="text">
-                </div>
-                <div class="btns">
-                    <button id="getBtn">Display Array</button>
-                    <button class="sortBtn">Sort Array</button>
-                </div>
+            <div class="inp">
+                <input placeholder="2,6,4,9,3,7" id="arrInput" class="inputForArray" type="text">
+            </div>
+            <div class="btns">
+                <button id="getBtn">Display Array</button>
+                <button class="sortBtn">Sort Array</button>
+            </div>
         </div>
 
         <hr class="betweenHr">
@@ -133,7 +153,17 @@
         </div>
 
         <div class="info">
-
+            <h2>How to use</h2>
+            <div class="steps">
+                <span>Step_1 :Enter the array elements seperated with "," commas.</span>
+                <br>
+                <span>Step_2 :Click on <b>"Display array"</b> button to show the array you entered.</span>
+                <br>
+                <span>Step_3 :Click on <b>"Sort Array"</b> button </span>
+            </div>
+        </div>
+        <div class="more" style="text-align: center; color: #1c5c54;">
+            More Projectys At <a href="https://sushantsharmadev.com/my-projects">My Projects</a>
         </div>
     </section>
 

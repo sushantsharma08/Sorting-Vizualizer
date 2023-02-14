@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectioin sort</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #006E90;
+            filter: blur(0.4px);
+
+        }
+
+        input {
+            border: 1px solid rgb(192, 148, 148);
+            outline: none;
+            height: 30px;
+            /* background: linear-gradient(70deg, rgba(0, 0, 0, 0.582), rgba(128, 128, 128, 0.925), rgba(128, 0, 128, 0.527)); */
+            border-radius: 0.4rem;
+            background-color: #2a9d8f;
+            color: rgb(230, 230, 218);
+            font-size: larger;
+            margin-inline: 4rem;
+            padding-inline: 10px;
+        }
+        ::placeholder{
+            color: #ADCAD6;
+        }
+        button {
+            margin-inline: 2rem;
+            font-size: large;
+            border: 1px solid rgb(178, 112, 216);
+            padding: 0.5rem;
+            padding-inline: 1rem;
+            border-radius: 0.3rem;
+            outline: none;
+        }
+        .heading{
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .getInput {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .main{
+            margin: 3rem 1rem;
+            background:radial-gradient(#ADCAD6,#cdb4db,#41BBD9);
+            min-height: 90vh;
+            border-radius: 1rem;
+        }
+        .out{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div class="heading" style="font-size: xxx-large;">
+            Selection Sort
+        </div>
+
+        <hr>
+
+        <div class="getInput">
+            <div>
+                <input placeholder="2,6,4,9,3,7" id="arrInput" class="inputForArray" type="text">
+                <button id="getBtn">Put array</button>
+                <button class="sortBtn">Sort Array</button>
+            </div>
+        </div>
+
+        <div class="out">
+            <div class="arrayout" style="height: 100px;font-size: x-large;">
+
+            </div>
+            <div class="statement" style="height: 100px; font-size: xx-large;">
+
+            </div>
+            <div class="outputStatement">
+
+            </div>
+        </div>
+    </section>
+
+</body>
+<script src="script.js"></script>
+
+</html>

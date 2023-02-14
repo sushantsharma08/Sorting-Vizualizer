@@ -73,6 +73,18 @@
             justify-content: center;
             align-items: center;
         }
+        .btns{
+            margin-bottom: 25px;
+        }
+        .betweenHr{
+            width: 20vw;
+            background-color: #6d6868;
+            margin: auto;
+            border: none;
+            height: 1px;
+            border: 1px solid rgba(89, 0, 255, 0.473);
+            border-radius: 50%;
+        }
 
         @media screen and (max-width: 650px) {
             button {
@@ -100,12 +112,12 @@
                     <input placeholder="2,6,4,9,3,7" id="arrInput" class="inputForArray" type="text">
                 </div>
                 <div class="btns">
-                    <button id="getBtn">Put array</button>
+                    <button id="getBtn">Display Array</button>
                     <button class="sortBtn">Sort Array</button>
                 </div>
         </div>
 
-        <hr>
+        <hr class="betweenHr">
 
         <div class="out">
             <div class="arrayout" style="height: 100px;font-size: x-large;">
@@ -118,6 +130,10 @@
             <div class="outputStatement">
 
             </div>
+        </div>
+
+        <div class="info">
+
         </div>
     </section>
 

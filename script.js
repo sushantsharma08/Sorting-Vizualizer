@@ -1,10 +1,14 @@
 const array = document.querySelector('.inputForArray');
 const btn = document.getElementById('getBtn')
-const showBtn = document.querySelector('.showBtn');
 const sortBtn = document.querySelector('.sortBtn');
 const statement = document.querySelector('.statement');
 const arrayOutput = document.querySelector('.arrayout');
 const outputStatement = document.querySelector('.outputStatement');
+const themeBtn=document.querySelector('.theme');
+const theme = document.getElementById('theme');
+const body =document.querySelector(".bodytag");
+const section = document.querySelector('.main');
+
 
 let arrayInput = '';
 let arrayOfSpans = [];
@@ -51,11 +55,6 @@ function SelectionSort(arr) {
     }
 }
 
-// showBtn.addEventListener('click', () => {
-
-
-// })
-
 sortBtn.addEventListener('click', () => {
     if (arrayInput.length === 0) {
         statement.textContent = "no array input";
@@ -64,3 +63,23 @@ sortBtn.addEventListener('click', () => {
     }
 })
 
+// theme changing
+
+theme.addEventListener('click',()=>{
+
+    
+
+    if (theme.innerText === 'LIGHT') {
+        theme.textContent = 'DARK'
+        body.style.backgroundColor ="#18191a";
+        section.style.background ="linear-gradient(40deg,#17181880, #2f2b319a, #191a1a)";
+        body.style.color="white"
+        theme.style.backgroundColor="#333052"
+    }else {
+        theme.textContent = 'LIGHT'
+        body.style.backgroundColor ="#006E90";
+        section.style.background ="radial-gradient(#ADCAD6, #cdb4db, #41BBD9)";
+        theme.style.backgroundColor="#5f948d"
+        body.style.color="black"
+    }
+})

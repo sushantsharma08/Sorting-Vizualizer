@@ -10,21 +10,23 @@
         * {
             margin: 0;
             padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         body {
+            /* background-color: #18191a; */
             background-color: #006E90;
             filter: blur(0.4px);
 
         }
 
         input {
-            border: 1px solid rgb(192, 148, 148);
+            /* border: 1px solid rgb(44, 51, 66); */
+            border: none;
             outline: none;
             height: 30px;
-            /* background: linear-gradient(70deg, rgba(0, 0, 0, 0.582), rgba(128, 128, 128, 0.925), rgba(128, 0, 128, 0.527)); */
             border-radius: 0.4rem;
-            background-color: #2a9d8f;
+            background-color: #2a2547a9;
             color: rgb(230, 230, 218);
             font-size: larger;
             margin-inline: 4rem;
@@ -62,6 +64,7 @@
         .main {
             margin: 3rem 1rem;
             background: radial-gradient(#ADCAD6, #cdb4db, #41BBD9);
+            /* background: radial-gradient(#17181880, #2f2b319a, #191a1a); */
             min-height: 90vh;
             border-radius: 1rem;
         }
@@ -85,7 +88,7 @@
             border: none;
             height: 1px;
             border: 1px solid rgba(89, 0, 255, 0.473);
-            border-radius: 50%;
+            border-radius: 40%;
         }
 
         .info {
@@ -103,11 +106,11 @@
         }
 
         .steps span {
-            color: #221919;
+            color: #444141;
         }
 
         a {
-            color: #1a2927;
+            color: #3c3469;
             text-decoration: inherit;
         }
 
@@ -121,88 +124,28 @@
                 align-items: center;
             }
         }
-        .theme{
-             display: flex;
-             position: absolute;
-             top: -2.5rem;
-             right: 2rem;
-
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-
-        /* Hide default HTML checkbox */
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        /* The slider */
-        .slider {
+        #theme{
+            background-color: #5f948d;
             position: absolute;
+            top: -2.3rem;
+            right: 0rem;
+            margin-right: 5rem;
+            border: 2px; 
+            padding: 0.3rem; 
+            padding-inline: 1rem; 
+            border-radius: 0.2rem;
             cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-        }
-
-        input:checked+.slider {
-            background-color: #434b52;
-        }
-
-        input:focus+.slider {
-            box-shadow: 0 0 1px #2196F3;
-        }
-
-        input:checked+.slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-        }
-
-        /* Rounded sliders */
-        .slider.round {
-            border-radius: 34px;
-        }
-
-        .slider.round:before {
-            border-radius: 50%;
+            font-family:sans-serif;
         }
     </style>
 </head>
 
-<body>
-    <div class="theme">
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
-        <span class="currentTheme">Light</span>
-    </div>
+<body class="bodytag">
 
+    <div id="theme">LIGHT</div>
+    
     <section class="main">
+
         <div class="heading" style="font-size: xxx-large;">
             Selection Sort
         </div>
@@ -211,7 +154,7 @@
 
         <div class="getInput">
             <div class="inp">
-                <input placeholder="2,6,4,9,3,7" id="arrInput" class="inputForArray" type="text">
+                <input placeholder="Ex: 2,6,4,9,3,7" id="arrInput" class="inputForArray" type="text">
             </div>
             <div class="btns">
                 <button id="getBtn">Display Array</button>
@@ -244,7 +187,7 @@
                 <span>Step_3 :Click on <b>"Sort Array"</b> button </span>
             </div>
         </div>
-        <div class="more" style="text-align: center; color: #1c5c54;">
+        <div class="more" style="text-align: center; color: #1c5c54; margin:0.5rem 0;">
             More Projectys At <a href="https://sushantsharmadev.com/my-projects">My Projects</a>
         </div>
     </section>

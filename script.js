@@ -11,7 +11,6 @@ const section = document.querySelector('.main');
 
 
 let arrayInput = '';
-let arrayOfSpans = [];
 
 let updatedSpan = function () {
     for (let i = 0; i < arrayInput.length; i++) {
@@ -23,6 +22,8 @@ let updatedSpan = function () {
 btn.addEventListener('click', () => {
     arrayInput = array.value;
     arrayInput = arrayInput.split(',').map(Number);
+    const arrayOfSpans = [];
+    console.log(arrayInput.length);
     for (let i = 0; i < arrayInput.length; i++) {
         let createSpan = document.createElement('span');
         createSpan.id = `span-${i}`;

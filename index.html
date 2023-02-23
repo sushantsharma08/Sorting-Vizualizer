@@ -54,11 +54,14 @@
             justify-content: center;
         }
 
-        .getInput {
+        .getInput,.selectSort {
             margin-top: 2rem;
             display: flex;
             flex-direction: row;
             justify-content: center;
+        }
+        .selectSort{
+            margin-bottom: 1.5rem;
         }
 
         .main {
@@ -119,23 +122,33 @@
                 margin-top: 20px;
             }
 
-            .getInput {
+            .getInput,.selectSort {
                 flex-direction: column;
                 align-items: center;
             }
         }
-        #theme{
+
+        #theme {
             background-color: #5f948d;
             position: absolute;
             top: -2.3rem;
             right: 0rem;
             margin-right: 5rem;
-            border: 2px; 
-            padding: 0.3rem; 
-            padding-inline: 1rem; 
+            border: 2px;
+            padding: 0.3rem;
+            padding-inline: 1rem;
             border-radius: 0.2rem;
             cursor: pointer;
-            font-family:sans-serif;
+            font-family: sans-serif;
+        }
+        #sortType{
+            margin-inline: 2rem;
+            font-size: large;
+            border: 1px solid rgb(178, 112, 216);
+            padding: 0.25rem;
+            padding-inline: 1rem;
+            border-radius: 0.3rem;
+            outline: none;
         }
     </style>
 </head>
@@ -143,11 +156,11 @@
 <body class="bodytag">
 
     <div id="theme">LIGHT</div>
-    
+
     <section class="main">
 
         <div class="heading" style="font-size: xxx-large;">
-            Selection Sort
+            Sorting Algorithm Visulaizer
         </div>
 
         <hr>
@@ -158,8 +171,15 @@
             </div>
             <div class="btns">
                 <button id="getBtn">Display Array</button>
-                <button class="sortBtn">Sort Array</button>
             </div>
+        </div>
+
+        <div class="selectSort">
+            <select name="sortType" id="sortType">
+                <option value="Selection">Selection Sort</option>
+                <option value="Insertion">Insertion Sort</option>
+            </select>
+            <button class="sortBtn">Sort Array</button>
         </div>
 
         <hr class="betweenHr">

@@ -4,11 +4,11 @@ const sortBtn = document.querySelector('.sortBtn');
 const statement = document.querySelector('.statement');
 const arrayOutput = document.querySelector('.arrayout');
 const outputStatement = document.querySelector('.outputStatement');
-const themeBtn=document.querySelector('.theme');
+const themeBtn = document.querySelector('.theme');
 const theme = document.getElementById('theme');
-const body =document.querySelector(".bodytag");
+const body = document.querySelector(".bodytag");
 const section = document.querySelector('.main');
-
+const sortType = document.getElementById('sortType');
 
 let arrayInput = '';
 
@@ -33,14 +33,14 @@ btn.addEventListener('click', () => {
         arrayOfSpans.push(createSpan);
     }
     console.log(arrayInput);
-    arrayOutput.innerHTML =arrayInput;
+    arrayOutput.innerHTML = arrayInput;
     console.log(...arrayOfSpans);
     statement.replaceChildren(...arrayOfSpans);
     updatedSpan();
 })
 
 function SelectionSort(arr) {
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length-1; i++) {
         setTimeout(() => {
             document.getElementById(`span-${i}`).style.backgroundColor = 'rgba( 96 , 191 , 96 , 0.376 )';
             let min_ind = i;
@@ -56,31 +56,56 @@ function SelectionSort(arr) {
     }
 }
 
+function insertionSort(arr) 
+{ 
+    console.log('started');
+
+    let i, key, j;
+    for (i = 1; i < arr.length; i++)
+    { 
+        key = arr[i]; 
+        j = i - 1; 
+        while (j >= 0 && arr[j] > key)
+        { 
+            arr[j + 1] = arr[j]; 
+            j = j - 1; 
+        } 
+        arr[j + 1] = key; 
+    } 
+    updatedSpan();
+} 
+
 sortBtn.addEventListener('click', () => {
     if (arrayInput.length === 0) {
         statement.textContent = "no array input";
     } else {
-        SelectionSort(arrayInput);
+        if (sortType.value === 'Selection') {
+            SelectionSort(arrayInput);
+        }
+        else if (sortType.value === 'Insertion') {
+            insertionSort(arrayInput);
+        }
     }
+    console.log(sortType.value);
 })
 
 // theme changing
 
-theme.addEventListener('click',()=>{
+theme.addEventListener('click', () => {
 
-    
+
 
     if (theme.innerText === 'LIGHT') {
         theme.textContent = 'DARK'
-        body.style.backgroundColor ="#18191a";
-        section.style.background ="linear-gradient(40deg,#17181880, #2f2b319a, #191a1a)";
-        body.style.color="white"
-        theme.style.backgroundColor="#333052"
-    }else {
+        body.style.backgroundColor = "#18191a";
+        section.style.background = "linear-gradient(40deg,#17181880, #2f2b319a, #191a1a)";
+        body.style.color = "white"
+        theme.style.backgroundColor = "#333052"
+    } else {
         theme.textContent = 'LIGHT'
-        body.style.backgroundColor ="#006E90";
-        section.style.background ="radial-gradient(#ADCAD6, #cdb4db, #41BBD9)";
-        theme.style.backgroundColor="#5f948d"
-        body.style.color="black"
+        body.style.backgroundColor = "#006E90";
+        section.style.background = "radial-gradient(#ADCAD6, #cdb4db, #41BBD9)";
+        theme.style.backgroundColor = "#5f948d"
+        body.style.color = "black"
     }
 })

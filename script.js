@@ -57,23 +57,91 @@ function SelectionSort(arr) {
 }
 
 function insertionSort(arr) {
-    console.log('started');
-
     let i, key, j;
-    for (i = 0; i < arr.length; i++) {
-        i++
-        setTimeout(() => {
+    for (i = 1; i < arr.length; i++) {
         key = arr[i];
         j = i - 1;
+        // setTimeout(() => {
         while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
-            }
-            updatedSpan();
-        },200*i)
+            arr[j + 1] = arr[j];
+            j = j - 1;
+            // document.getElementById(`span-${j}`).style.backgroundColor = 'rgba( 191 , 191 , 96 , 0.376 )';
+        }
+        // document.getElementById(`span-${i}`).style.backgroundColor = 'rgba( 91 , 191 , 96 , 0.376 )';
         arr[j + 1] = key;
+        updatedSpan()
+        // },100 );
     }
 }
+
+
+function partition(arr, low, high) {
+
+    // pivot
+    let pivot = arr[high];
+
+    // Index of smaller element and
+    // indicates the right position
+    // of pivot found so far
+    let i = (low - 1);
+    // setTimeout(() => {
+        
+        
+        for (let j = low; j <= high - 1; j++) {
+            // setTimeout(() => {
+
+            // If current element is smaller
+            // than the pivot
+            if (arr[j] < pivot) {
+
+                // Increment index of
+                // smaller element
+                i++;
+                swap(arr, i, j);
+            }
+        // }, 1000);
+        }
+
+        swap(arr, i + 1, high);
+        updatedSpan()
+        return (i + 1);
+
+}
+
+
+// Javascript implementation of QuickSort
+
+
+// A utility function to swap two elements
+function swap(arr, i, j) {
+    // setTimeout(() => {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    // }, 1000);
+
+}
+
+/* The main function that implements QuickSort
+          arr[] --> Array to be sorted,
+          low --> Starting index,
+          high --> Ending index
+ */
+function quickSort(arr, low, high) {
+    if (low < high) {
+
+        // pi is partitioning index, arr[p]
+        // is now at right place
+        let pi = partition(arr, low, high);
+
+        // Separately sort elements before
+        // partition and after partition
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+
 
 sortBtn.addEventListener('click', () => {
     if (arrayInput.length === 0) {
@@ -84,6 +152,9 @@ sortBtn.addEventListener('click', () => {
         }
         else if (sortType.value === 'Insertion') {
             insertionSort(arrayInput);
+        }
+        else if (sortType.value === 'Quick') {
+            quickSort(arrayInput, 0, arrayInput.length - 1)
         }
     }
     console.log(sortType.value);

@@ -52,6 +52,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: xxx-large;
         }
 
         .getInput,.selectSort {
@@ -126,6 +127,15 @@
                 flex-direction: column;
                 align-items: center;
             }
+            .heading{
+                font-size: xx-large;
+            }
+        }
+
+        @media screen and (max-width:440px){
+            .heading{
+                font-size: x-large;
+            }
         }
 
         #theme {
@@ -159,7 +169,7 @@
 
     <section class="main">
 
-        <div class="heading" style="font-size: xxx-large;">
+        <div class="heading">
             Sorting Algorithm Visulaizer
         </div>
 
@@ -176,6 +186,7 @@
 
         <div class="selectSort">
             <select name="sortType" id="sortType">
+                <option disabled default selected value="default">Select Algorithm</option>
                 <option value="Selection">Selection Sort</option>
                 <option value="Insertion">Insertion Sort</option>
             </select>
@@ -204,7 +215,9 @@
                 <br>
                 <span>Step_2 :Click on <b>"Display array"</b> button to show the array you entered.</span>
                 <br>
-                <span>Step_3 :Click on <b>"Sort Array"</b> button </span>
+                <span>Step_3 :Select the Sorting Algorithm you want </span>
+                <br>
+                <span>Step_4 :Click on <b>"Sort Array"</b> button </span>
             </div>
         </div>
         <div class="more" style="text-align: center; color: #1c5c54; margin:0.5rem 0;">

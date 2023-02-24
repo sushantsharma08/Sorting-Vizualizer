@@ -40,7 +40,7 @@ btn.addEventListener('click', () => {
 })
 
 function SelectionSort(arr) {
-    for (let i = 0; i < arr.length-1; i++) {
+    for (let i = 0; i < arr.length - 1; i++) {
         setTimeout(() => {
             document.getElementById(`span-${i}`).style.backgroundColor = 'rgba( 96 , 191 , 96 , 0.376 )';
             let min_ind = i;
@@ -56,24 +56,24 @@ function SelectionSort(arr) {
     }
 }
 
-function insertionSort(arr) 
-{ 
+function insertionSort(arr) {
     console.log('started');
 
     let i, key, j;
-    for (i = 1; i < arr.length; i++)
-    { 
-        key = arr[i]; 
-        j = i - 1; 
-        while (j >= 0 && arr[j] > key)
-        { 
-            arr[j + 1] = arr[j]; 
-            j = j - 1; 
-        } 
-        arr[j + 1] = key; 
-    } 
-    updatedSpan();
-} 
+    for (i = 0; i < arr.length; i++) {
+        i++
+        setTimeout(() => {
+        key = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            updatedSpan();
+        },200*i)
+        arr[j + 1] = key;
+    }
+}
 
 sortBtn.addEventListener('click', () => {
     if (arrayInput.length === 0) {
